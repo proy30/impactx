@@ -96,11 +96,12 @@ class InputParameters:
                 )
             vuetify.VDivider()
             with vuetify.VCardText():
-                vuetify.VCombobox(
-                    v_model=("particle_shape",),
-                    label="Particle Shape",
-                    items=([1, 2, 3],),
-                    dense=True,
+                with vuetify.VRow(classes="my-0"):
+                    with vuetify.VCol(cols=12, classes="py-0"):
+                        vuetify.VCheckbox(
+                            label="Space Charge",
+                            v_model=("space_charge", False),
+                            dense=True,
                 )
                 with vuetify.VRow(classes="my-2"):
                     with vuetify.VCol(cols=6, classes="py-0"):
@@ -128,6 +129,8 @@ class InputParameters:
                                 ctrl.on_input_change,
                                 "[$event, 'float','mass_MeV','mass_MeV_validation', ['positive']]",
                             ),
+                                    classes="mt-0",
+                            style="margin-bottom: 0.5px",
                         )
                 with vuetify.VRow(classes="my-0"):
                     with vuetify.VCol(cols=12, classes="py-0"):
