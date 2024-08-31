@@ -96,13 +96,20 @@ class InputParameters:
                 )
             vuetify.VDivider()
             with vuetify.VCardText():
-                with vuetify.VRow(classes="my-0"):
-                    with vuetify.VCol(cols=12, classes="py-0"):
+                with vuetify.VRow(classes="py-2"):
+                    with vuetify.VCol(cols=6, classes="py-0"):
                         vuetify.VCheckbox(
                             label="Space Charge",
                             v_model=("space_charge", False),
                             dense=True,
                 )
+                    with vuetify.VCol(cols=6, classes="py-0"):
+                        vuetify.VCheckbox(
+                            label="CSR",
+                            v_model=("CSR", False),
+                            dense=True,
+                            classes="mt-0",
+                        )
                 with vuetify.VRow(classes="my-2"):
                     with vuetify.VCol(cols=6, classes="py-0"):
                         vuetify.VTextField(
@@ -130,10 +137,9 @@ class InputParameters:
                                 "[$event, 'float','mass_MeV','mass_MeV_validation', ['positive']]",
                             ),
                                     classes="mt-0",
-                            style="margin-bottom: 0.5px",
                         )
                 with vuetify.VRow(classes="my-0"):
-                    with vuetify.VCol(cols=12, classes="py-0"):
+                    with vuetify.VCol(cols=12, classes="pb-0"):
                         vuetify.VTextField(
                             v_model=("npart",),
                             label="Number of Particles",
