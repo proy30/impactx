@@ -9,14 +9,15 @@ server, state, ctrl = setup_server()
 
 class DistributionFunctions:
     """
-    Helper functions for the
-    User-Input section for beam properties.
+    Helper functions for the distribution parameters.
     """
 
     @staticmethod
     def convert_distribution_parameters_to_valid_type():
         """
-        Helper function to check if user input is valid.
+        Helper function to convert user-inputted distribution parameters
+        from string type to float type.
+
         :return: A dictionary with parameter names as keys and their validated values.
         """
 
