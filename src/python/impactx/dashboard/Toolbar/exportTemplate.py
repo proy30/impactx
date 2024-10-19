@@ -1,4 +1,4 @@
-from ..Input.distributionParameters.distributionMain import parameter_input_checker
+from ..Input.distributionParameters.distributionFunctions import DistributionFunctions
 from ..Input.latticeConfiguration.latticeMain import parameter_input_checker_for_lattice
 from ..trame_setup import setup_server
 
@@ -15,7 +15,7 @@ def build_distribution_list():
     as a string for exporting purposes.
     """
     distribution_name = state.selectedDistribution
-    parameters = parameter_input_checker()
+    parameters = DistributionFunctions.convert_distribution_parameters_to_valid_type()
 
     distribution_parameters = ",\n    ".join(
         f"{key}={value}" for key, value in parameters.items()
