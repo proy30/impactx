@@ -28,7 +28,7 @@ state.listOfDistributionsAndParametersAndDefault = (
 )
 
 # -----------------------------------------------------------------------------
-# Default
+# Defaults
 # -----------------------------------------------------------------------------
 
 state.selectedDistribution = "Waterbag"
@@ -94,8 +94,8 @@ def update_distribution_parameters(
 
 def distribution_parameters():
     """
-    Writes user input for distribution parameters in suitable format for simulation code.
-    :return: An instance of the selected distribution class, initialized with user-provided parameters.
+    :return: An instance of the selected distribution class,
+     initialized with the appropriate parameters provided by the user.
     """
 
     distribution_name = state.selectedDistribution
