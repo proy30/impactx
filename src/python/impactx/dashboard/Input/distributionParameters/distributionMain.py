@@ -31,7 +31,7 @@ state.listOfDistributionsAndParametersAndDefault = (
 # -----------------------------------------------------------------------------
 
 state.selectedDistribution = "Waterbag"
-state.selectedDistributionType = "Native"
+state.selectedDistributionType = "Twiss"
 state.selectedDistributionParameters = []
 
 # -----------------------------------------------------------------------------
@@ -172,21 +172,19 @@ class DistributionParameters:
             vuetify.VDivider()
             with vuetify.VCardText():
                 with vuetify.VRow():
-                    with vuetify.VCol(cols=8):
+                    with vuetify.VCol(cols=6):
                         vuetify.VCombobox(
                             label="Select Distribution",
                             v_model=("selectedDistribution",),
                             items=("listOfDistributions",),
                             dense=True,
                         )
-                    with vuetify.VCol(cols=4):
+                    with vuetify.VCol(cols=6):
                         vuetify.VSelect(
                             v_model=("selectedDistributionType",),
                             label="Type",
-                            items=(["Native", "Twiss"],),
-                            # change=(ctrl.kin_energy_unit_change, "[$event]"),
+                            items=(["Twiss", "Quadratic Form"],),
                             dense=True,
-                            disabled=True,
                         )
                 with vuetify.VRow(classes="my-2"):
                     for i in range(3):
