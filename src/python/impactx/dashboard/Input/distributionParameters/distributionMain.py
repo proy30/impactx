@@ -6,6 +6,9 @@ Authors: Parthib Roy, Axel Huebl
 License: BSD-3-Clause-LBNL
 """
 
+import inspect
+
+from distribution_input_helpers import twiss
 from trame.widgets import vuetify
 
 from impactx import distribution
@@ -47,24 +50,43 @@ def populate_distribution_parameters(selectedDistribution):
         whos parameters need to be populated.
     """
 
-    selectedDistributionParameters = (
-        state.listOfDistributionsAndParametersAndDefault.get(selectedDistribution, [])
-    )
+    if state.selectedDistributionType == "Twiss":
+        sig = inspect.signature(twiss)
+        state.selectedDistributionParameters = [
+            {
+                "parameter_name": param.name,
+                "parameter_default_value": param.default
+                if param.default != param.empty
+                else None,
+                "parameter_type": "float",  # Harcoding Twiss to 'float' type.
+                "parameter_error_message": generalFunctions.validate_against(
+                    param.default if param.default != param.empty else None, "float"
+                ),
+            }
+            for param in sig.parameters.values()
+        ]
 
-    state.selectedDistributionParameters = [
-        {
-            "parameter_name": parameter[0],
-            "parameter_default_value": parameter[1],
-            "parameter_type": parameter[2],
-            "parameter_error_message": generalFunctions.validate_against(
-                parameter[1], parameter[2]
-            ),
-        }
-        for parameter in selectedDistributionParameters
-    ]
+    else:  # when type == 'Quadratic Form'
+        selectedDistributionParameters = (
+            state.listOfDistributionsAndParametersAndDefault.get(
+                selectedDistribution, []
+            )
+        )
 
-    generalFunctions.update_simulation_validation_status()
-    return selectedDistributionParameters
+        state.selectedDistributionParameters = [
+            {
+                "parameter_name": parameter[0],
+                "parameter_default_value": parameter[1],
+                "parameter_type": parameter[2],
+                "parameter_error_message": generalFunctions.validate_against(
+                    parameter[1], parameter[2]
+                ),
+            }
+            for parameter in selectedDistributionParameters
+        ]
+
+        generalFunctions.update_simulation_validation_status()
+        return selectedDistributionParameters
 
 
 def update_distribution_parameters(
@@ -95,13 +117,18 @@ def update_distribution_parameters(
 def distribution_parameters():
     """
     :return: An instance of the selected distribution class,
-     initialized with the appropriate parameters provided by the user.
+    initialized with the appropriate parameters provided by the user.
     """
 
     distribution_name = state.selectedDistribution
     parameters = DistributionFunctions.convert_distribution_parameters_to_valid_type()
 
-    distr = getattr(distribution, distribution_name)(**parameters)
+    if state.selectedDistributionType == "Twiss":
+        twiss_params = twiss(**parameters)
+        distr = getattr(distribution, distribution_name)(**twiss_params)
+    else:
+        distr = getattr(distribution, distribution_name)(**parameters)
+
     return distr
 
 
