@@ -12,6 +12,7 @@ from impactx import distribution
 
 from ...trame_setup import setup_server
 from ..generalFunctions import generalFunctions
+from .distributionFunctions import DistributionFunctions
 
 server, state, ctrl = setup_server()
 
@@ -91,24 +92,6 @@ def update_distribution_parameters(
 # -----------------------------------------------------------------------------
 
 
-def parameter_input_checker():
-    """
-    Helper function to check if user input is valid.
-    :return: A dictionary with parameter names as keys and their validated values.
-    """
-
-    parameter_input = {}
-    for param in state.selectedDistributionParameters:
-        if param["parameter_error_message"] == []:
-            parameter_input[param["parameter_name"]] = float(
-                param["parameter_default_value"]
-            )
-        else:
-            parameter_input[param["parameter_name"]] = 0.0
-
-    return parameter_input
-
-
 def distribution_parameters():
     """
     Writes user input for distribution parameters in suitable format for simulation code.
@@ -116,7 +99,7 @@ def distribution_parameters():
     """
 
     distribution_name = state.selectedDistribution
-    parameters = parameter_input_checker()
+    parameters = DistributionFunctions.convert_distribution_parameters_to_valid_type()
 
     distr = getattr(distribution, distribution_name)(**parameters)
     return distr
