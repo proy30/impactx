@@ -17,13 +17,25 @@ def build_distribution_list():
     distribution_name = state.selectedDistribution
     parameters = DistributionFunctions.convert_distribution_parameters_to_valid_type()
 
-    distribution_parameters = ",\n    ".join(
-        f"{key}={value}" for key, value in parameters.items()
+    indentation = " " * (8 if state.selectedDistributionType == "Twiss" else 4)
+    distribution_parameters = ",\n".join(
+        f"{indentation}{key}={value}" for key, value in parameters.items()
     )
 
-    return (
-        f"distr = distribution.{distribution_name}(\n    {distribution_parameters},\n)"
-    )
+    if state.selectedDistributionType == "Twiss":
+        return (
+            f"distr = distribution.{distribution_name}(\n"
+            f"    **twiss(\n"
+            f"{distribution_parameters},\n"
+            f"    )\n"
+            f")"
+        )
+    else:
+        return (
+            f"distr = distribution.{distribution_name}(\n"
+            f"{distribution_parameters},\n"
+            f")"
+        )
 
 
 def build_lattice_list():
@@ -56,7 +68,7 @@ def input_file():
     dashboard user inputs into a python script.
     """
     script = f"""
-from impactx import ImpactX, distribution, elements
+from impactx import ImpactX, distribution, elements, twiss
 
 sim = ImpactX()
 
