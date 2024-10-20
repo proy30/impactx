@@ -37,6 +37,7 @@ state.listOfDistributionsAndParametersAndDefault = (
 state.selectedDistribution = "Waterbag"
 state.selectedDistributionType = "Twiss"
 state.selectedDistributionParameters = []
+state.distributionTypeDisabled = False
 
 # -----------------------------------------------------------------------------
 # Main Functions
@@ -47,7 +48,7 @@ def populate_distribution_parameters(selectedDistribution):
     """
     Populates distribution parameters based on the selected distribution.
     :param selectedDistribution (str): The name of the selected distribution
-        whos parameters need to be populated.
+    whose parameters need to be populated.
     """
 
     if state.selectedDistributionType == "Twiss":
@@ -58,7 +59,7 @@ def populate_distribution_parameters(selectedDistribution):
                 "parameter_default_value": param.default
                 if param.default != param.empty
                 else None,
-                "parameter_type": "float",  # Harcoding Twiss to 'float' type.
+                "parameter_type": "float",  # Hardcoding Twiss to 'float' type.
                 "parameter_error_message": generalFunctions.validate_against(
                     param.default if param.default != param.empty else None, "float"
                 ),
@@ -139,6 +140,12 @@ def distribution_parameters():
 
 @state.change("selectedDistribution")
 def on_distribution_name_change(selectedDistribution, **kwargs):
+    if selectedDistribution == "Thermal":
+        state.selectedDistributionType = "Quadratic Form"
+        state.distributionTypeDisabled = True
+        state.dirty("selectedDistributionType")
+    else:
+        state.distributionTypeDisabled = False
     populate_distribution_parameters(selectedDistribution)
 
 
@@ -195,6 +202,7 @@ class DistributionParameters:
                             label="Type",
                             items=(["Twiss", "Quadratic Form"],),
                             dense=True,
+                            disabled=("distributionTypeDisabled",),
                         )
                 with vuetify.VRow(classes="my-2"):
                     for i in range(3):
