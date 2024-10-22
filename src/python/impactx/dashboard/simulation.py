@@ -38,7 +38,8 @@ def fig_to_base64(fig):
 
 def run_simulation():
     """
-    This tests using ImpactX and Pandas Dataframes
+    This tests runs a simulation on ImpactX
+    based on user inputs from the dashboard.
     """
     sim = ImpactX()
 
@@ -84,7 +85,7 @@ def run_simulation():
     sim.lattice.extend(lattice_configuration)
 
     # simulate
-    sim.track_particles()
+    sim.evolve()
 
     fig = adjusted_settings_plot(pc)
     fig_original = pc.plot_phasespace()
