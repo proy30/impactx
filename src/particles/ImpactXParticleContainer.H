@@ -50,7 +50,7 @@ namespace impactx
             px,  ///< momentum in x, scaled by the magnitude of the reference momentum [unitless] (at fixed s or t)
             py,  ///< momentum in y, scaled by the magnitude of the reference momentum [unitless] (at fixed s or t)
             pt,  ///< energy deviation, scaled by speed of light * the magnitude of the reference momentum [unitless] (at fixed s)
-            qm,  ///< charge to mass ratio, in q_e/m_e [q_e/eV]
+            qm,  ///< charge-to-mass ratio in Coulomb per kilogram (C/kg)
             w,   ///< particle weight, number of real particles represented by this macroparticle [unitless]
             nattribs ///< the number of attributes above (always last)
         };
@@ -163,7 +163,7 @@ namespace impactx
          * @param px momentum in x
          * @param py momentum in y
          * @param pt momentum in t
-         * @param qm charge over mass in 1/eV
+         * @param qm charge over mass in Coulomb per kilogram (C/kg)
          * @param bchchg total charge within a bunch in C
          */
         void

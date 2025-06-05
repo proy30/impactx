@@ -511,7 +511,7 @@ class ImpactXParticleContainer(
         :param px: momentum in x
         :param py: momentum in y
         :param pt: momentum in t
-        :param qm: charge over mass in 1/eV
+        :param qm: charge over mass in Coulomb per kilogram (C/kg)
         :param bchchg: total charge within a bunch in C
         """
     def mean_and_std_positions(self) -> tuple[float, float, float, float, float, float]:

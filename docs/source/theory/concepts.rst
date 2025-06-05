@@ -22,7 +22,7 @@ A reference trajectory is favorable instead of, e.g., differences to the beam ce
 The reference values of :math:`z=ct` and :math:`s` should be identical until reaching a bending element.
 (If the lattice contains no bending elements, then they should coincide.)
 Also, the reference value of :math:`ct` coincides with the value of :math:`s` in the ultrarelativistic limit.
-More generally, the derivative :math:`ds/d(ct) = \beta`, where the relativistic :math:`\beta = \sqrt{1-\frac{1}{p_t^2}}`.
+More generally, the derivative :math:`ds/d(ct) = \beta`, where the relativistic :math:`\beta = \sqrt{1-\frac{1}{\gamma^2}}`.
 
 Collective Effects
 ------------------

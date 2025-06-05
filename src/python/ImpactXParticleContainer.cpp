@@ -88,7 +88,7 @@ void init_impactxparticlecontainer(py::module& m)
              ":param px: momentum in x\n"
              ":param py: momentum in y\n"
              ":param pt: momentum in t\n"
-             ":param qm: charge over mass in 1/eV\n"
+             ":param qm: charge over mass in Coulomb per kilogram (C/kg)\n"
              ":param bchchg: total charge within a bunch in C"
         )
         .def("ref_particle",
