@@ -71,6 +71,8 @@ async def execute_impactx_sim() -> None:
                     state.sim_current_step / state.sim_total_steps
                 ) * 95
 
+            await asyncio.to_thread(over_s.update)
+
         SimulationProgress.print_to_xterm(sim_output_line)
         SimulationHistory.add_to_view_details_log(sim_output_line_decoded)
 
@@ -88,6 +90,4 @@ async def execute_impactx_sim() -> None:
 
     # Update visualizations
     SimulationHelper.display_phase_space_plots()
-    over_s.update()
-
     SimulationHelper.complete_simulation()

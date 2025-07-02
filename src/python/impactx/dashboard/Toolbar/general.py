@@ -68,6 +68,9 @@ class GeneralToolbar:
             (GeneralToolbar.dashboard_info(),)
             vuetify.VSpacer()
             AnalyzeToolbar.select_visualization()
+            (RunToolbar.run_simulation(),)
+            vuetify.VDivider(vertical=True, classes="mx-2")
+            (GeneralToolbar.simulation_history_button())
             vuetify.VDivider(vertical=True, classes="mx-2")
             GeneralToolbar.force_quit_button()
 
