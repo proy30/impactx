@@ -203,7 +203,7 @@ class DashboardDefaults:
 
 class TooltipDefaults:
     """
-    Defaults for input toolips in the ImpactX dashboard.
+    Defaults for input tooltips in the ImpactX dashboard.
     """
 
     state.all_tooltips = InputDefaultsHelper.get_docstrings(
@@ -223,7 +223,7 @@ class ToolbarDefaults:
 
 class UIDefaults:
     """
-    Default UI which the input cards reply on in the ImpactX dashboard.
+    Default UI which the input cards rely on in the ImpactX dashboard.
     """
 
     ROW_STYLE = {

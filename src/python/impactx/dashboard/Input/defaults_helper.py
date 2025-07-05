@@ -108,7 +108,7 @@ class InputDefaultsHelper:
     def find_init_docstring_for_classes(classes):
         """
         Retrieves the __init__ docstring of the given classes.
-        :param classes: A list of typles containing class names.
+        :param classes: A list of tuples containing class names.
         :return: A dictionary with class names as keys and their __init__ docstrings as values.
         """
 

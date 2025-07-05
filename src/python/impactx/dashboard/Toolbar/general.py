@@ -46,7 +46,7 @@ class GeneralToolbar:
 
         toolbar_name = toolbar_name.lower()
         if toolbar_name == "input":
-            (GeneralToolbar.dashboard_info(),)
+            GeneralToolbar.dashboard_info()
             vuetify.VSpacer()
             InputToolbar.import_button()
             InputToolbar.export_button()
@@ -57,15 +57,15 @@ class GeneralToolbar:
             InputToolbar.collapse_all_sections_button()
             GeneralToolbar.force_quit_button()
         elif toolbar_name == "run":
-            (GeneralToolbar.dashboard_info(),)
-            (vuetify.VSpacer(),)
-            (RunToolbar.run_simulation(),)
+            GeneralToolbar.dashboard_info()
+            vuetify.VSpacer()
+            RunToolbar.run_simulation()
             vuetify.VDivider(vertical=True, classes="mx-2")
-            (GeneralToolbar.simulation_history_button())
+            GeneralToolbar.simulation_history_button()
             vuetify.VDivider(vertical=True, classes="mx-2")
-            (GeneralToolbar.force_quit_button())
+            GeneralToolbar.force_quit_button()
         elif toolbar_name == "analyze":
-            (GeneralToolbar.dashboard_info(),)
+            GeneralToolbar.dashboard_info()
             vuetify.VSpacer()
             AnalyzeToolbar.select_visualization()
             vuetify.VDivider(vertical=True, classes="mx-2")

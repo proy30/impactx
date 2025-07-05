@@ -23,7 +23,6 @@ __all__ = [
     "html",
     "JupyterApp",
     "setup_server",
-    "html",
     "vuetify",
     "AnalyzeSimulation",
     "NavigationComponents",

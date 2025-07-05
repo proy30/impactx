@@ -1,6 +1,8 @@
+from pathlib import Path
+
 from trame.ui.router import RouterViewLayout
 from trame.ui.vuetify3 import SinglePageWithDrawerLayout
-from trame.widgets import router, xterm
+from trame.widgets import client, router, xterm
 
 from . import (
     AnalyzeSimulation,
@@ -22,10 +24,6 @@ server, state, ctrl = setup_server()
 server.enable_module(
     {"styles": ["https://fonts.googleapis.com/css?family=Roboto:300,400,500"]}
 )
-
-from pathlib import Path
-
-from trame.widgets import client
 
 CSS_FILE = Path(__file__).with_name("Input").joinpath("style.css")
 
@@ -116,5 +114,4 @@ def application():
         with layout.content:
             NavigationComponents.create_documentation_drawer()
             router.RouterView()
-            init_terminal()
     return layout

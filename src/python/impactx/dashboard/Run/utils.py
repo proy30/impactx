@@ -15,8 +15,8 @@ state.sim_progress_status = ""
 
 class SimulationHelper:
     """
-    Methods to help factilitate proper ImpactX simulation
-    excution on the dashboard.
+    Methods to help facilitate proper ImpactX simulation
+    execution on the dashboard.
     """
 
     @staticmethod
