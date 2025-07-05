@@ -7,7 +7,7 @@ License: BSD-3-Clause-LBNL
 """
 
 from ... import setup_server
-from .. import CardComponents
+from ..components import CardComponents
 
 server, state, ctrl = setup_server()
 

@@ -9,15 +9,10 @@ License: BSD-3-Clause-LBNL
 from impactx import elements
 
 from ... import setup_server, vuetify
-from .. import (
-    CardBase,
-    CardComponents,
-    DashboardDefaults,
-    DashboardValidation,
-    InputComponents,
-    NavigationComponents,
-    generalFunctions,
-)
+from ..components import CardBase, CardComponents, InputComponents, NavigationComponents
+from ..defaults import DashboardDefaults
+from ..validation import DashboardValidation
+from ..generalFunctions import generalFunctions
 from ..defaults_helper import InputDefaultsHelper
 from . import LatticeConfigurationHelper, LatticeVariableHandler
 

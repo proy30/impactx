@@ -7,14 +7,9 @@ License: BSD-3-Clause-LBNL
 """
 
 from ... import setup_server, vuetify
-from .. import (
-    CardBase,
-    CardComponents,
-    DashboardValidation,
-    InputComponents,
-    NavigationComponents,
-    generalFunctions,
-)
+from ..components import CardBase, CardComponents, InputComponents, NavigationComponents
+from ..validation import DashboardValidation
+from ..generalFunctions import generalFunctions
 from . import SpaceChargeFunctions
 
 server, state, ctrl = setup_server()

@@ -1,11 +1,9 @@
 from typing import Optional, Tuple
 
 from ... import html, setup_server, vuetify
-from .. import (
-    CardComponents,
-    DashboardValidation,
-    generalFunctions,
-)
+from ..components import CardComponents
+from ..validation import DashboardValidation
+from ..generalFunctions import generalFunctions
 from .helper import LatticeConfigurationHelper
 
 server, state, ctrl = setup_server()

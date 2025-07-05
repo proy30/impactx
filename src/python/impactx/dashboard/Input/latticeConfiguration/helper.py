@@ -1,7 +1,7 @@
 import keyword
 
 from ... import setup_server, vuetify
-from .. import CardComponents
+from ..components import CardComponents
 
 server, state, ctrl = setup_server()
 

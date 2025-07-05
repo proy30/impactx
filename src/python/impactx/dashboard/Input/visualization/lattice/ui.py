@@ -7,7 +7,7 @@ License: BSD-3-Clause-LBNL
 """
 
 from .... import html, setup_server, vuetify
-from ... import CardBase
+from ...components import CardBase
 from . import StatComponents, StatUtils
 
 server, state, ctrl = setup_server()

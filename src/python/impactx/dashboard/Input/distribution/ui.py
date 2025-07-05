@@ -11,14 +11,10 @@ from typing import Union
 from impactx import distribution
 
 from ... import setup_server, vuetify
-from .. import (
-    CardBase,
-    CardComponents,
-    DashboardDefaults,
-    DashboardValidation,
-    InputComponents,
-    generalFunctions,
-)
+from ..components import CardBase, CardComponents, InputComponents
+from ..defaults import DashboardDefaults
+from ..validation import DashboardValidation
+from ..generalFunctions import generalFunctions
 from ..defaults_helper import InputDefaultsHelper
 from . import DistributionFunctions
 

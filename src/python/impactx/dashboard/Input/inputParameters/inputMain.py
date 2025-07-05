@@ -7,7 +7,8 @@ License: BSD-3-Clause-LBNL
 """
 
 from ... import setup_server, vuetify
-from .. import CardBase, CardComponents, DashboardValidation, InputComponents
+from ..components import CardBase, CardComponents, InputComponents
+from ..validation import DashboardValidation
 from . import InputFunctions
 
 server, state, ctrl = setup_server()
