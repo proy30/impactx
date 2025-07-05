@@ -12,8 +12,8 @@ from . import (
     LatticeConfiguration,
     NavigationComponents,
     SpaceChargeConfiguration,
-    csrConfiguration,
-    isrConfiguration,
+    CSRConfiguration,
+    ISRConfiguration,
     setup_server,
     vuetify,
 )
@@ -35,8 +35,8 @@ inputParameters = InputParameters()
 distribution = DistributionParameters()
 lattice_config = LatticeConfiguration()
 space_charge = SpaceChargeConfiguration()
-csr = csrConfiguration()
-isr = isrConfiguration()
+csr = CSRConfiguration()
+isr = ISRConfiguration()
 
 card_column_padding = {"classes": "pa-2"}
 card_row_padding = {"classes": "ma-2"}

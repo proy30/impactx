@@ -12,7 +12,7 @@ from ..components import CardBase, CardComponents, InputComponents
 server, state, ctrl = setup_server()
 
 
-class isrConfiguration(CardBase):
+class ISRConfiguration(CardBase):
     HEADER_NAME = "ISR"
 
     def __init__(self):

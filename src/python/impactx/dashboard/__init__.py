@@ -7,8 +7,8 @@ from .server import setup_server
 from .Toolbar.general import GeneralToolbar
 
 from .Analyze.ui import AnalyzeSimulation
-from .Input.csrConfiguration.csrMain import csrConfiguration
-from .Input.isr.ui import isrConfiguration
+from .Input.csr.ui import CSRConfiguration
+from .Input.isr.ui import ISRConfiguration
 from .Input.distribution.ui import DistributionParameters
 from .Input.inputParameters.inputMain import InputParameters
 from .Input.lattice.ui import LatticeConfiguration
@@ -26,8 +26,8 @@ __all__ = [
     "vuetify",
     "AnalyzeSimulation",
     "NavigationComponents",
-    "csrConfiguration",
-    "isrConfiguration",
+    "CSRConfiguration",
+    "ISRConfiguration",
     "DistributionParameters",
     "InputParameters",
     "LatticeConfiguration",
