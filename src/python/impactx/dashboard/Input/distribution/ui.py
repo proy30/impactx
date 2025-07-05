@@ -16,7 +16,7 @@ from ..defaults import DashboardDefaults
 from ..validation import DashboardValidation
 from ..generalFunctions import generalFunctions
 from ..defaults_helper import InputDefaultsHelper
-from . import DistributionFunctions
+from .utils import DistributionFunctions
 
 server, state, ctrl = setup_server()
 
