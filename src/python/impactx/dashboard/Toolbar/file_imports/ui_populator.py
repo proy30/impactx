@@ -7,8 +7,8 @@ License: BSD-3-Clause-LBNL
 """
 
 from ... import setup_server
-from ...Input.latticeConfiguration.latticeMain import add_lattice_element
-from ...Input.latticeConfiguration.variable_handler import LatticeVariableHandler
+from ...Input.lattice.ui import add_lattice_element
+from ...Input.lattice.variable_handler import LatticeVariableHandler
 from .python.parser import DashboardParser
 
 server, state, ctrl = setup_server()

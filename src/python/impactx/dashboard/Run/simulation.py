@@ -8,7 +8,7 @@ License: BSD-3-Clause-LBNL
 
 from .. import setup_server
 from ..Input.distribution.utils import DistributionFunctions
-from ..Input.latticeConfiguration.latticeMain import parameter_input_checker_for_lattice
+from ..Input.lattice.ui import parameter_input_checker_for_lattice
 
 server, state, ctrl = setup_server()
 

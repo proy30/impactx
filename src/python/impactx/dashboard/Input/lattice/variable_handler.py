@@ -4,7 +4,7 @@ from ... import html, setup_server, vuetify
 from ..components import CardComponents
 from ..validation import DashboardValidation
 from ..generalFunctions import generalFunctions
-from .helper import LatticeConfigurationHelper
+from .utils import LatticeConfigurationHelper
 
 server, state, ctrl = setup_server()
 
