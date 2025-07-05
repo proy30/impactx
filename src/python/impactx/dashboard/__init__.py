@@ -13,7 +13,7 @@ from .Input.distribution.ui import DistributionParameters
 from .Input.inputParameters.inputMain import InputParameters
 from .Input.latticeConfiguration.latticeMain import LatticeConfiguration
 from .Input.components.navigation import NavigationComponents
-from .Input.space_charge_configuration.spaceChargeMain import SpaceChargeConfiguration
+from .Input.space_charge.ui import SpaceChargeConfiguration
 
 from .start import JupyterApp
 # isort: on
