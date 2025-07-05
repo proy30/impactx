@@ -7,7 +7,7 @@ License: BSD-3-Clause-LBNL
 """
 
 from .. import setup_server
-from ..Input.inputParameters.inputMain import InputParameters
+from ..Input.input_parameters.ui import InputParameters
 from . import DashboardDefaults, DashboardValidation, generalFunctions
 
 server, state, ctrl = setup_server()

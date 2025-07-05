@@ -9,7 +9,7 @@ License: BSD-3-Clause-LBNL
 from ... import setup_server, vuetify
 from ..components import CardBase, CardComponents, InputComponents
 from ..validation import DashboardValidation
-from . import InputFunctions
+from .utils import InputFunctions
 
 server, state, ctrl = setup_server()
 from ..defaults import TRACKING_MODE_PROPERTIES
