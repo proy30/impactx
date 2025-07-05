@@ -11,10 +11,6 @@ from ..components import CardComponents
 
 server, state, ctrl = setup_server()
 
-# -----------------------------------------------------------------------------
-# Functions
-# -----------------------------------------------------------------------------
-
 
 class SpaceChargeFunctions:
     @staticmethod

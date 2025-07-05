@@ -29,11 +29,6 @@ LATTICE_ELEMENTS_MODULE_NAME = elements
 state.listOfLatticeElementParametersAndDefault = (
     InputDefaultsHelper.class_parameters_with_defaults(LATTICE_ELEMENTS_MODULE_NAME)
 )
-
-# -----------------------------------------------------------------------------
-# Default
-# -----------------------------------------------------------------------------
-
 state.selected_lattice_list = []
 state.nslice = ""
 

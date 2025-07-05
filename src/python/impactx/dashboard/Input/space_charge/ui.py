@@ -14,10 +14,6 @@ from . import SpaceChargeFunctions
 
 server, state, ctrl = setup_server()
 
-# -----------------------------------------------------------------------------
-# Default
-# -----------------------------------------------------------------------------
-
 state.prob_relative = []
 state.prob_relative_fields = []
 state.n_cell = []
